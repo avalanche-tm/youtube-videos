@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "LOCAL EMULATOR",
+            "cwd": "flutter_with_firebase_emulators",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "USE_FIREBASE_EMU=true",
+            ]
+        },
+        {
+            "name": "LOCAL DEVICE",
+            "cwd": "flutter_with_firebase_emulators",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "USE_FIREBASE_EMU=true",
+                "--dart-define",
+                "FIREBASE_EMU_URL=$(ip route get 8.8.8.8 | head -1 | awk '{print $7}')",
+            ]
+        },
+        {
+            "name": "PRODUCTION",
+            "cwd": "flutter_with_firebase_emulators",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "USE_FIREBASE_EMU=false",
+            ]
+        },
+        {
+            "name": "flutter_with_firebase_emulators (profile mode)",
+            "cwd": "flutter_with_firebase_emulators",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
