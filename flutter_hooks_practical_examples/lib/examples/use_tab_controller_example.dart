@@ -7,6 +7,7 @@ class UseTabControllerExample extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final tabController = useTabController(initialLength: 3);
+
     useEffect(() {
       tabController.addListener(() {
         debugPrint('Selected index: ${tabController.index}');

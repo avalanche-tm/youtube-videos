@@ -1,14 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-class UseTextEditingcontrollerExample extends HookWidget {
-  const UseTextEditingcontrollerExample({Key? key}) : super(key: key);
+class UseTextEditingControllerEquivalent extends StatefulWidget {
+  const UseTextEditingControllerEquivalent({Key? key}) : super(key: key);
+
+  @override
+  _UseTextEditingControllerEquivalentState createState() =>
+      _UseTextEditingControllerEquivalentState();
+}
+
+class _UseTextEditingControllerEquivalentState
+    extends State<UseTextEditingControllerEquivalent> {
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final usernameController = useTextEditingController();
-    final passwordController = useTextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Hooks Examples'),

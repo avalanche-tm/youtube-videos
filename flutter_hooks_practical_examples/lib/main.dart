@@ -12,8 +12,6 @@ import 'package:flutter_hooks_practical_examples/stateful_equivalents/use_effect
 import 'package:flutter_hooks_practical_examples/stateful_equivalents/use_state_equivalent.dart';
 import 'package:flutter_hooks_practical_examples/stateful_equivalents/use_tab_controller_equivalent.dart';
 
-import 'examples/example.dart';
-
 void main() async {
   runApp(const MyApp());
 }
@@ -31,21 +29,22 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home': (context) => HomePage(),
-        '/exampleExample': (context) => MyHomePage(':('),
-        '/useStateExample': (context) => UseStateExample(),
-        '/useEffectExample': (context) => UseEffectExample(),
-        '/useValueNotifierExample': (context) => UseValueNotifierExample(),
-        '/httpResourceExample': (context) => HttpResourceExample(),
+        '/useStateExample': (context) => const UseStateExample(),
+        '/useEffectExample': (context) => const UseEffectExample(),
+        '/useValueNotifierExample': (context) =>
+            const UseValueNotifierExample(),
+        '/httpResourceExample': (context) => const HttpResourceExample(),
         '/useTextEditingControllerExample': (context) =>
-            UseTextEditingcontrollerExample(),
-        '/useTabControllerExample': (context) => UseTabControllerExample(),
-        '/animationsExample': (context) => AnimationsExample(),
+            const UseTextEditingcontrollerExample(),
+        '/useTabControllerExample': (context) =>
+            const UseTabControllerExample(),
+        '/animationsExample': (context) => const AnimationsExample(),
         '/useSingleTickProviderExample': (context) =>
-            UseSingleTickProviderExample(),
-        '/useEffectEquivalent': (context) => UseEffectEquivalent(),
-        '/useStateEquivalent': (context) => UseStateEquivalent(),
+            const UseSingleTickProviderExample(),
+        '/useEffectEquivalent': (context) => const UseEffectEquivalent(),
+        '/useStateEquivalent': (context) => const UseStateEquivalent(),
         '/useTabControllerEquivalent': (context) =>
-            UseTabControllerEquivalent(),
+            const UseTabControllerEquivalent(),
       },
     );
   }

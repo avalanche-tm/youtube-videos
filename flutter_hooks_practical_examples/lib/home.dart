@@ -9,7 +9,6 @@ class HookExample {
 
 class HomePage extends StatelessWidget {
   final List<HookExample> examples = [
-    HookExample('example', '/example', 'Example'),
     HookExample('useEffect', '/useEffect', 'How to use useEffect'),
     HookExample('useState', '/useState', 'How to use useState'),
     HookExample(
@@ -23,7 +22,6 @@ class HomePage extends StatelessWidget {
     HookExample('Animations', '/animations', 'How to useAnimationsController'),
     HookExample('useSingleTickProvider', '/useSingleTickProvider',
         'How to useSingleTickProvider'),
-    HookExample('useMemoized', '/useMemoized', 'How to use useMemoized'),
   ];
   HomePage({Key? key}) : super(key: key);
 
