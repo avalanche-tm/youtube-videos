@@ -1,5 +1,3 @@
-library user_settings_store;
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_simple_state_management/models/user_settings.dart';
 import 'package:flutter_simple_state_management/models/user_settings_state.dart';
@@ -16,7 +14,6 @@ class UserSettingsStore extends Store<UserSettingsState> {
   UserSettingsStore() : super(UserSettingsState.initial()) {
     debugPrint('UserSettingsStore created');
     _userStoreSubscription = _userStore.addListener(_onUserStateChanged);
-    // watch(_userStore, _onUserStateChanged);
   }
 
   Future<void> getUserSettings(String uid) async {
@@ -48,5 +45,3 @@ class UserSettingsStore extends Store<UserSettingsState> {
     return super.dispose();
   }
 }
-
-// final userSettingsStore = UserSettingsStore(userStore);

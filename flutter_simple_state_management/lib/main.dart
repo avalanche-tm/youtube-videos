@@ -9,7 +9,7 @@ import 'state_management/user_settings_store.dart';
 import 'state_management/user_store.dart';
 
 void main() async {
-  await configureFirebase(seedData: true);
+  await configureFirebase(seedData: false);
   registerDependencies();
   runApp(MyApp());
 }

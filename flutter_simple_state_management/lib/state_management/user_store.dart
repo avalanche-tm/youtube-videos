@@ -1,5 +1,3 @@
-library user_store;
-
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_simple_state_management/models/user_state.dart';
@@ -55,5 +53,3 @@ class UserStore extends Store<UserState> {
     return super.dispose();
   }
 }
-
-// final userStore = UserStore();

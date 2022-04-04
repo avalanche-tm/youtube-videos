@@ -1,5 +1,3 @@
-library items_store;
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_simple_state_management/models/items_state.dart';
 import 'package:flutter_simple_state_management/models/shopping_item.dart';
