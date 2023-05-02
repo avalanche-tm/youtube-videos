@@ -1,0 +1,1144 @@
+1
+00:00:00,666 --> 00:00:01,700
+Did you ever feel this
+
+2
+00:00:01,700 --> 00:00:04,133
+satisfied writing logic inside your widgets
+
+3
+00:00:04,133 --> 00:00:07,166
+just because that's how flutter is designed
+
+4
+00:00:07,733 --> 00:00:08,933
+If you didn't, don't worry
+
+5
+00:00:08,933 --> 00:00:10,866
+You are still completely normal person
+
+6
+00:00:11,000 --> 00:00:12,533
+and for those of you who did
+
+7
+00:00:12,533 --> 00:00:13,533
+what if I told you
+
+8
+00:00:13,533 --> 00:00:16,666
+you can swallow a blue pill and make most of it go away
+
+9
+00:00:17,066 --> 00:00:19,200
+Let me introduce you to Flutter Hooks
+
+10
+00:00:19,200 --> 00:00:21,400
+Hooks will solve two of your main issues
+
+11
+00:00:21,400 --> 00:00:23,133
+boilerplate of stateful widget
+
+12
+00:00:23,133 --> 00:00:25,166
+and sharing same code across in its state
+
+13
+00:00:25,166 --> 00:00:27,100
+and dispose methods of your widgets
+
+14
+00:00:27,133 --> 00:00:28,133
+Remember less time
+
+15
+00:00:28,133 --> 00:00:30,500
+you have to spend writing and maintaining code
+
+16
+00:00:30,533 --> 00:00:32,300
+means more time for your friends
+
+17
+00:00:32,300 --> 00:00:35,166
+family or your girlfriend/boyfriend
+
+18
+00:00:35,166 --> 00:00:36,933
+unless you don't have any of those
+
+19
+00:00:36,933 --> 00:00:39,500
+then you should just probably skip this video
+
+20
+00:00:39,566 --> 00:00:41,166
+Anyways, let's get started
+
+21
+00:00:41,200 --> 00:00:42,333
+Enter flutter pub
+
+22
+00:00:42,333 --> 00:00:44,900
+get flutter_hooks into a console
+
+23
+00:00:44,900 --> 00:00:46,666
+and wait for magic to do its work
+
+24
+00:00:47,000 --> 00:00:49,100
+I promised you getting rid of boilerplates
+
+25
+00:00:49,100 --> 00:00:50,500
+so let's do that first
+
+26
+00:00:50,500 --> 00:00:53,066
+Replace your stateful widget with stateless widget
+
+27
+00:00:53,066 --> 00:00:54,866
+and change it into a hook widget
+
+28
+00:00:55,133 --> 00:00:57,066
+If you ever use the React hooks before
+
+29
+00:00:57,066 --> 00:00:58,966
+you'll probably know what's coming next
+
+30
+00:00:58,966 --> 00:01:00,666
+but for those of you who didn't
+
+31
+00:01:00,666 --> 00:01:01,500
+bear with me
+
+32
+00:01:01,733 --> 00:01:03,733
+Hook is a reusable piece of code
+
+33
+00:01:03,933 --> 00:01:05,333
+you can write your own hook
+
+34
+00:01:05,333 --> 00:01:06,933
+or use one of the many pretty
+
+35
+00:01:06,933 --> 00:01:08,800
+fine hooks which come with the package
+
+36
+00:01:08,933 --> 00:01:09,800
+In either case
+
+37
+00:01:09,800 --> 00:01:10,700
+there is a rule
+
+38
+00:01:10,700 --> 00:01:13,200
+that hook must always be prefixed with use
+
+39
+00:01:13,200 --> 00:01:15,666
+and called only in build method of a widget
+
+40
+00:01:15,966 --> 00:01:18,966
+One of the most useful pretty fine hooks is use effect
+
+41
+00:01:18,966 --> 00:01:21,300
+it takes a function as a 1st parameter
+
+42
+00:01:21,300 --> 00:01:23,066
+and gives you an option to return
+
+43
+00:01:23,066 --> 00:01:24,933
+another function as a return value
+
+44
+00:01:25,400 --> 00:01:28,766
+Second parameter is a list of variables which if changed
+
+45
+00:01:28,766 --> 00:01:31,333
+will cause use effect hook to execute again
+
+46
+00:01:31,800 --> 00:01:34,000
+Leaving 2nd parameter as empty array
+
+47
+00:01:34,000 --> 00:01:35,966
+will make sure cold runs only once
+
+48
+00:01:36,166 --> 00:01:38,466
+So what we have here is basically in its state
+
+49
+00:01:38,466 --> 00:01:40,733
+and disposed without usual boilerplate
+
+50
+00:01:41,000 --> 00:01:43,133
+Let's start the app and convince ourselves
+
+51
+00:01:43,133 --> 00:01:44,466
+that is really the case
+
+52
+00:01:45,166 --> 00:01:47,666
+We can also have multiple instances of the same
+
+53
+00:01:47,666 --> 00:01:49,166
+hook containing different code
+
+54
+00:01:49,166 --> 00:01:50,133
+which is great
+
+55
+00:01:50,400 --> 00:01:52,900
+They will both run in the order you define them
+
+56
+00:01:52,933 --> 00:01:54,466
+hooks are basically pieces of
+
+57
+00:01:54,466 --> 00:01:56,166
+codes stored in a list in your widget
+
+58
+00:01:56,166 --> 00:01:58,533
+but instead of sharing same state with the widget
+
+59
+00:01:58,533 --> 00:02:00,500
+each one of them runs in isolation
+
+60
+00:02:00,666 --> 00:02:01,566
+For that reason
+
+61
+00:02:01,566 --> 00:02:04,000
+hooks should never be called in sight conditions
+
+62
+00:02:04,666 --> 00:02:06,933
+and finally, let's see what happens if we change
+
+63
+00:02:06,933 --> 00:02:09,133
+variable listed in second parameter
+
+64
+00:02:09,600 --> 00:02:10,900
+Notice that code in
+
+65
+00:02:10,900 --> 00:02:12,766
+other use effect hook didn't get called
+
+66
+00:02:12,766 --> 00:02:15,100
+but the one would change parameter did
+
+67
+00:02:15,533 --> 00:02:17,400
+By now, you must probably be thinking
+
+68
+00:02:17,400 --> 00:02:19,600
+useEffect is a good place to initialize
+
+69
+00:02:19,600 --> 00:02:21,100
+and dispose my streams
+
+70
+00:02:21,133 --> 00:02:22,533
+text editing controllers
+
+71
+00:02:22,533 --> 00:02:24,666
+or run any initialization code
+
+72
+00:02:24,966 --> 00:02:25,700
+That is correct
+
+73
+00:02:25,700 --> 00:02:27,600
+but people from Flutter Hooks community
+
+74
+00:02:27,600 --> 00:02:29,133
+have foreseen that and created
+
+75
+00:02:29,133 --> 00:02:31,500
+more specialized hooks which will make your life even
+
+76
+00:02:31,500 --> 00:02:32,466
+more easier
+
+77
+00:02:32,700 --> 00:02:34,100
+Another hook you'll probably
+
+78
+00:02:34,100 --> 00:02:36,600
+find handy is used text editing controller
+
+79
+00:02:36,966 --> 00:02:39,666
+Text editing controller is one of those resources that
+
+80
+00:02:39,666 --> 00:02:42,100
+need to be created and dispose manually
+
+81
+00:02:42,200 --> 00:02:45,200
+but when used as a hook disposing it is automatic
+
+82
+00:02:45,700 --> 00:02:48,300
+Also, the bowlerplate of creating stateful widget
+
+83
+00:02:48,300 --> 00:02:49,366
+just to dispose the
+
+84
+00:02:49,366 --> 00:02:51,066
+extending controller is gone
+
+85
+00:02:51,066 --> 00:02:53,133
+and everything looks more neat and readable
+
+86
+00:02:53,266 --> 00:02:55,800
+In addition, there are hooks for similar controllers
+
+87
+00:02:55,800 --> 00:02:58,000
+like tapController, pageController
+
+88
+00:02:58,000 --> 00:02:59,333
+and scrollController
+
+89
+00:02:59,566 --> 00:03:00,266
+For example
+
+90
+00:03:00,266 --> 00:03:02,666
+if we want to change steps programmatically
+
+91
+00:03:02,666 --> 00:03:03,933
+using stepController
+
+92
+00:03:03,933 --> 00:03:04,600
+this is the
+
+93
+00:03:04,600 --> 00:03:07,333
+code we'd have to write down in order to make it work
+
+94
+00:03:07,666 --> 00:03:09,066
+We can achieve the same thing
+
+95
+00:03:09,066 --> 00:03:12,366
+using use step controller hook with far less code
+
+96
+00:03:12,666 --> 00:03:14,933
+In case, we need to do some initialization
+
+97
+00:03:14,933 --> 00:03:17,000
+like adding a listener to a controller
+
+98
+00:03:17,000 --> 00:03:19,100
+We can do it inside the use effect hook
+
+99
+00:03:19,400 --> 00:03:21,100
+I hope this gives you an idea
+
+100
+00:03:21,100 --> 00:03:22,700
+how hooks can work together
+
+101
+00:03:22,766 --> 00:03:25,000
+Now, let's move on to use state hook
+
+102
+00:03:25,000 --> 00:03:27,366
+use state will require a generic argument
+
+103
+00:03:27,366 --> 00:03:28,766
+which is your initial state
+
+104
+00:03:28,933 --> 00:03:32,333
+This can obviously be any basic type but also an object
+
+105
+00:03:32,466 --> 00:03:33,866
+For a sake of simplicity
+
+106
+00:03:33,866 --> 00:03:35,266
+let's use a boolean state
+
+107
+00:03:35,266 --> 00:03:37,500
+which will dog a visibility of an element
+
+108
+00:03:37,500 --> 00:03:38,800
+when we click on a button
+
+109
+00:03:39,466 --> 00:03:43,100
+Let's run demo to make sure example works as expected
+
+110
+00:03:43,133 --> 00:03:46,000
+Clicking on button indeed changes our bullion state
+
+111
+00:03:46,000 --> 00:03:48,966
+and text elements visibilities changing too
+
+112
+00:03:48,966 --> 00:03:51,666
+Use state hook is actually a value notifier
+
+113
+00:03:51,666 --> 00:03:54,533
+which means we access its state from the value parameter
+
+114
+00:03:55,033 --> 00:03:56,166
+This works great
+
+115
+00:03:56,166 --> 00:03:58,400
+but notice that we are rebuilding hole widget
+
+116
+00:03:58,400 --> 00:03:59,700
+for something that actually
+
+117
+00:03:59,700 --> 00:04:02,100
+takes place significantly lower in the tree
+
+118
+00:04:02,400 --> 00:04:05,300
+We could easily solve this problem by extracting
+
+119
+00:04:05,366 --> 00:04:08,200
+everything under sized box widget to another widget
+
+120
+00:04:08,300 --> 00:04:11,533
+And this is actually recommended so called flutter way
+
+121
+00:04:11,700 --> 00:04:14,766
+but in some instances, you might not want to do that
+
+122
+00:04:14,800 --> 00:04:17,266
+Either when widget is too simple like this one
+
+123
+00:04:17,266 --> 00:04:19,333
+or for the sake of readability
+
+124
+00:04:19,666 --> 00:04:22,166
+In that case, you can isolate what gets rebuild
+
+125
+00:04:22,166 --> 00:04:24,200
+by using widget called hook builder
+
+126
+00:04:24,400 --> 00:04:26,800
+You can put hook builder anywhere in your tree
+
+127
+00:04:26,800 --> 00:04:28,966
+and color hook from its builder method
+
+128
+00:04:29,300 --> 00:04:31,133
+Another way to approach this problem
+
+129
+00:04:31,133 --> 00:04:33,400
+is by using use value note to fire hook
+
+130
+00:04:33,600 --> 00:04:35,200
+The difference between these two hooks
+
+131
+00:04:35,200 --> 00:04:37,733
+is that use state immediately notifies
+
+132
+00:04:37,800 --> 00:04:40,300
+or rebuilds when state changes while
+
+133
+00:04:40,366 --> 00:04:42,166
+use value notifier doesn't
+
+134
+00:04:42,600 --> 00:04:45,400
+This way we can keep state reference in the top widget
+
+135
+00:04:45,400 --> 00:04:46,133
+and rebuild
+
+136
+00:04:46,133 --> 00:04:48,800
+only those child widgets which are listening to it
+
+137
+00:04:48,866 --> 00:04:52,000
+We can listen to changes with use value listenable hook
+
+138
+00:04:52,533 --> 00:04:55,100
+Now, let's move to a more realistic example
+
+139
+00:04:55,133 --> 00:04:57,533
+sooner or later you need to access some
+
+140
+00:04:57,533 --> 00:04:59,000
+kind of API with your app
+
+141
+00:04:59,000 --> 00:05:01,000
+and display the result in your widget
+
+142
+00:05:01,200 --> 00:05:03,200
+You hopefully be very uncomfortable
+
+143
+00:05:03,200 --> 00:05:05,333
+with putting that kind of code in your widget
+
+144
+00:05:05,333 --> 00:05:07,733
+and instead create a separate class to honor
+
+145
+00:05:07,733 --> 00:05:09,766
+separation of concerns principle
+
+146
+00:05:10,100 --> 00:05:10,933
+Once you do that
+
+147
+00:05:10,933 --> 00:05:13,166
+you need to call those API functions
+
+148
+00:05:13,166 --> 00:05:14,366
+somewhere in your widget
+
+149
+00:05:14,366 --> 00:05:16,400
+like OnPressed method of a button
+
+150
+00:05:16,733 --> 00:05:18,933
+that means you need a reference to API
+
+151
+00:05:18,933 --> 00:05:20,600
+class on a top widget level
+
+152
+00:05:20,600 --> 00:05:23,166
+which can be achieved with used memoized hook
+
+153
+00:05:23,666 --> 00:05:24,800
+In use memoized hook
+
+154
+00:05:24,800 --> 00:05:26,866
+you can instantiate your big objects
+
+155
+00:05:26,866 --> 00:05:29,666
+which are going to be cashed between a visit rebuilds
+
+156
+00:05:29,933 --> 00:05:31,100
+Second parameter
+
+157
+00:05:31,100 --> 00:05:32,566
+also takes list of values
+
+158
+00:05:32,566 --> 00:05:33,366
+which if change
+
+159
+00:05:33,366 --> 00:05:35,933
+it will force new instance of object to be created
+
+160
+00:05:36,500 --> 00:05:38,733
+Now, we can use concrete method from our API
+
+161
+00:05:38,733 --> 00:05:40,133
+class to fetch some data
+
+162
+00:05:40,333 --> 00:05:42,200
+We'll hook it into a future builder
+
+163
+00:05:42,200 --> 00:05:44,566
+since the method we are calling return's future
+
+164
+00:05:44,900 --> 00:05:45,866
+When the widget loads
+
+165
+00:05:45,866 --> 00:05:47,933
+so will data from our API call
+
+166
+00:05:47,933 --> 00:05:48,800
+which is great
+
+167
+00:05:49,333 --> 00:05:50,300
+What if we want to get
+
+168
+00:05:50,300 --> 00:05:52,500
+fresh data at some point in the future?
+
+169
+00:05:52,700 --> 00:05:54,200
+We could store function call
+
+170
+00:05:54,200 --> 00:05:55,700
+into a value notifier hook
+
+171
+00:05:55,700 --> 00:05:58,000
+and wrap future builder with the hook builder
+
+172
+00:05:58,466 --> 00:05:59,866
+Those subscribe to changes
+
+173
+00:05:59,866 --> 00:06:01,700
+by calling gius value listenable
+
+174
+00:06:01,700 --> 00:06:03,300
+and each time there is a change
+
+175
+00:06:03,366 --> 00:06:04,666
+New future will be obtained
+
+176
+00:06:04,666 --> 00:06:06,266
+and best to a future builder
+
+177
+00:06:06,466 --> 00:06:09,900
+by assigning same API function called to a value notifier
+
+178
+00:06:09,900 --> 00:06:11,766
+We are basically triggering a rebuild
+
+179
+00:06:11,766 --> 00:06:13,966
+with the same function but different result
+
+180
+00:06:13,966 --> 00:06:16,300
+If you're thinking that's a bit varied workaround
+
+181
+00:06:16,300 --> 00:06:17,766
+to do something simple like
+
+182
+00:06:17,766 --> 00:06:18,866
+calling a function
+
+183
+00:06:18,866 --> 00:06:20,333
+You're right, the thing is
+
+184
+00:06:20,333 --> 00:06:21,133
+flutter hooks
+
+185
+00:06:21,133 --> 00:06:21,966
+wasn't meant to be
+
+186
+00:06:21,966 --> 00:06:24,766
+some sort of state management solution by default
+
+187
+00:06:24,766 --> 00:06:26,566
+The main purpose of this  package
+
+188
+00:06:26,566 --> 00:06:28,066
+is to increase coach sharing
+
+189
+00:06:28,066 --> 00:06:30,300
+between widgets and reduce boilerplate
+
+190
+00:06:30,566 --> 00:06:31,466
+For that reason
+
+191
+00:06:31,466 --> 00:06:34,200
+flutter hooks package is often used with riverpod
+
+192
+00:06:34,200 --> 00:06:34,900
+Redux
+
+193
+00:06:34,900 --> 00:06:38,200
+bloc or any other proper state management packages
+
+194
+00:06:38,200 --> 00:06:40,500
+There is also a way to do state management
+
+195
+00:06:40,500 --> 00:06:41,566
+only with flutter hooks
+
+196
+00:06:41,566 --> 00:06:43,900
+but this will be a topic for the future video
+
+197
+00:06:44,333 --> 00:06:47,366
+One case where hooks shine the most are the animations
+
+198
+00:06:47,466 --> 00:06:48,733
+by now, you have probably
+
+199
+00:06:48,733 --> 00:06:50,366
+found yourself in a situation
+
+200
+00:06:50,366 --> 00:06:51,966
+where you need a custom animation
+
+201
+00:06:51,966 --> 00:06:55,466
+that is not available as one of the existing animation widgets
+
+202
+00:06:55,666 --> 00:06:56,333
+Having that
+
+203
+00:06:56,333 --> 00:06:58,700
+meant turning your previously stateless widget
+
+204
+00:06:58,700 --> 00:06:59,933
+into a stateful widget
+
+205
+00:06:59,933 --> 00:07:02,800
+just so you can create and dispose animation controller
+
+206
+00:07:03,166 --> 00:07:04,966
+Let's take a look at simple example
+
+207
+00:07:04,966 --> 00:07:07,266
+of record button with animated shadow
+
+208
+00:07:07,400 --> 00:07:09,833
+First, we need to define animation controller
+
+209
+00:07:09,833 --> 00:07:11,933
+and set some duration and direction
+
+210
+00:07:12,133 --> 00:07:15,466
+We can store animation object using use memoized hook
+
+211
+00:07:15,466 --> 00:07:17,766
+because there's no need to get new instance of
+
+212
+00:07:17,766 --> 00:07:18,800
+resource every time
+
+213
+00:07:18,800 --> 00:07:19,866
+which it rebuilt
+
+214
+00:07:20,100 --> 00:07:22,533
+And finally, we'll define recording state
+
+215
+00:07:22,933 --> 00:07:25,733
+Now, animation can be assigned to animation builder
+
+216
+00:07:25,733 --> 00:07:27,200
+and values to animate shadow
+
+217
+00:07:27,200 --> 00:07:29,600
+can be obtained from animation object
+
+218
+00:07:29,600 --> 00:07:31,633
+Inside on press method of a button
+
+219
+00:07:31,633 --> 00:07:33,300
+will toggle recording state
+
+220
+00:07:33,300 --> 00:07:35,933
+which will render appropriate icon and shadow
+
+221
+00:07:36,333 --> 00:07:38,366
+Let's run this game and see if it works
+
+222
+00:07:38,366 --> 00:07:41,700
+Clicking on record starts animation and shows stop icon
+
+223
+00:07:41,700 --> 00:07:43,000
+just as expected
+
+224
+00:07:43,400 --> 00:07:46,600
+Clicking stop will remove shadow and render record button
+
+225
+00:07:47,066 --> 00:07:49,700
+We can expand this example with one more widget
+
+226
+00:07:49,866 --> 00:07:52,333
+Let's suppose we want to display elapsed time
+
+227
+00:07:52,333 --> 00:07:54,000
+since recording started
+
+228
+00:07:54,066 --> 00:07:56,133
+and reset it when recording is stopped
+
+229
+00:07:56,133 --> 00:07:57,566
+to make things more readable
+
+230
+00:07:57,566 --> 00:08:00,866
+we'll extract button widget and create new elapsed time
+
+231
+00:08:00,866 --> 00:08:01,766
+label widget
+
+232
+00:08:02,133 --> 00:08:05,000
+Since those widgets will both depend on recording state
+
+233
+00:08:05,000 --> 00:08:07,466
+we can wrap them together with hook builder widget
+
+234
+00:08:07,566 --> 00:08:10,500
+and pass the state down to their constructors
+
+235
+00:08:10,933 --> 00:08:12,400
+Elapsed time label widget
+
+236
+00:08:12,400 --> 00:08:13,566
+will consist of simple
+
+237
+00:08:13,566 --> 00:08:15,900
+text widget wrapped in visibility widget
+
+238
+00:08:16,266 --> 00:08:18,200
+We can hook recording state value
+
+239
+00:08:18,200 --> 00:08:19,700
+to its visibility field
+
+240
+00:08:20,166 --> 00:08:22,300
+Next thing, we'll need is some kind of timer
+
+241
+00:08:22,300 --> 00:08:24,866
+which will periodically update text widget
+
+242
+00:08:25,100 --> 00:08:27,400
+One important thing we have to keep in mind is
+
+243
+00:08:27,400 --> 00:08:30,000
+we will have lots of free builds depending on timer
+
+244
+00:08:30,000 --> 00:08:31,500
+period we specify
+
+245
+00:08:31,900 --> 00:08:34,466
+We definitely don't want to rebuild more times than
+
+246
+00:08:34,466 --> 00:08:37,466
+maximum frames per second our device can't push
+
+247
+00:08:37,466 --> 00:08:39,366
+Luckily, there is something called single
+
+248
+00:08:39,366 --> 00:08:41,566
+ticker provider which solves that issue
+
+249
+00:08:41,666 --> 00:08:44,000
+and it's already available as a building hook
+
+250
+00:08:44,333 --> 00:08:46,833
+Next, we'll need to create actual ticker object
+
+251
+00:08:46,833 --> 00:08:48,533
+which will use sticker provider
+
+252
+00:08:48,533 --> 00:08:49,500
+a sticking source
+
+253
+00:08:49,500 --> 00:08:50,700
+and update state
+
+254
+00:08:50,733 --> 00:08:52,366
+after every frame elapses
+
+255
+00:08:52,366 --> 00:08:54,000
+Now that we have ticker object
+
+256
+00:08:54,000 --> 00:08:55,766
+We also need to make it stick
+
+257
+00:08:55,900 --> 00:08:57,900
+We can do that in use effect hook
+
+258
+00:08:58,133 --> 00:09:00,766
+We'll also have to make sure call this rerun
+
+259
+00:09:00,766 --> 00:09:04,366
+after recording state changes by adding recorder.value
+
+260
+00:09:04,366 --> 00:09:06,933
+to the dependency list of use effect hook
+
+261
+00:09:07,400 --> 00:09:09,900
+Sticker should also eventually be disposed
+
+262
+00:09:10,000 --> 00:09:12,000
+so we will need another use effect hook
+
+263
+00:09:12,000 --> 00:09:15,466
+and make sure it runs only once and only own disposed
+
+264
+00:09:15,866 --> 00:09:17,700
+Now we have all resourcess ready
+
+265
+00:09:17,700 --> 00:09:20,900
+So let's block state to the text widget and run example
+
+266
+00:09:21,166 --> 00:09:22,566
+You might have noticed that
+
+267
+00:09:22,566 --> 00:09:25,500
+we had to write a bit more code to make all this work
+
+268
+00:09:25,500 --> 00:09:27,666
+which made our widget filled with logic
+
+269
+00:09:27,933 --> 00:09:29,266
+Last thing we want to do is
+
+270
+00:09:29,266 --> 00:09:31,466
+defy all the principles we were fighting
+
+271
+00:09:31,466 --> 00:09:32,733
+using flutter hooks
+
+272
+00:09:32,800 --> 00:09:34,300
+but fear not my friends
+
+273
+00:09:34,300 --> 00:09:36,666
+because we can extract all the logic
+
+274
+00:09:36,700 --> 00:09:38,800
+into a custom hook in a separate file
+
+275
+00:09:39,300 --> 00:09:41,466
+Creating custom hook couldn't be easier
+
+276
+00:09:41,466 --> 00:09:43,333
+All you have to do is create function
+
+277
+00:09:43,333 --> 00:09:45,266
+and copy out the logic inside it
+
+278
+00:09:45,600 --> 00:09:47,866
+Make sure your hook name starts with use
+
+279
+00:09:47,866 --> 00:09:50,200
+and returns resource you are interested to
+
+280
+00:09:50,200 --> 00:09:52,333
+In this case, we'll return duration
+
+281
+00:09:52,333 --> 00:09:55,366
+Now we can replace all of our code in widget build method
+
+282
+00:09:55,366 --> 00:09:56,600
+with only one line
+
+283
+00:09:56,966 --> 00:09:58,500
+Also, you can use the hook in
+
+284
+00:09:58,500 --> 00:10:00,266
+any other widget if you need to
+
+285
+00:10:00,733 --> 00:10:02,166
+and that's it folks
+
+286
+00:10:02,266 --> 00:10:03,333
+Enjoy your fish
+
